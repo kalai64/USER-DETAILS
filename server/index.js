@@ -11,6 +11,10 @@ mongoose.connect('mongodb+srv://kalai6464:kalai6464@cluster0.suros08.mongodb.net
     .then(() => console.log(`Mongoose Connected`))
     .catch(err => console.log(err))
 
+app.get('/',(req,res)=>{
+    res.send(`<h1>Server is live</h1>`)
+})
+
 app.post('/create', (req, res) => {
     usermodel.create(req.body)
         .then(users => res.json(users))
