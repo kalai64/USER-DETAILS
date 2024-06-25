@@ -12,7 +12,7 @@ function Create() {
     const Submit = async(e)=>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:8000/create',{name,age,email})
+            await axios.post('https://crud-tkvv.onrender.com/create',{name,age,email})
             .then(result => navigate('/'))
             
         } catch (error) {

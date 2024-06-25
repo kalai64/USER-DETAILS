@@ -12,7 +12,7 @@ function Update() {
 
     const getData = async () => {
         try {
-            const result = await axios.get('http://localhost:8000/getuser/' + id)
+            const result = await axios.get('https://crud-tkvv.onrender.com/getuser/' + id)
             setName(result.data.name)
             setAge(result.data.age)
             setEmail(result.data.email)
@@ -28,7 +28,7 @@ function Update() {
     const Updates = async (e) => {
         e.preventDefault()
         try {
-            await axios.put('http://localhost:8000/updateuser/' + id, { name, age, email })
+            await axios.put('https://crud-tkvv.onrender.com/updateuser/' + id, { name, age, email })
             navigate('/')
         } catch (error) {
             console.log(error)
