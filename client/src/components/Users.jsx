@@ -14,21 +14,21 @@ function Users() {
             console.log(error)
         }
     }
-
-    useEffect(() => {
-        getData()
-    }, [])
-
-    const handleDelete = async (id) => {
-        try {
-            await axios.delete('https://crud-tkvv.onrender.com/deleteuser/' + id)
-            window.location.reload()
-        } catch (error) {
-            console.log(error)
+        
+        useEffect(() => {
+            getData()
+        }, [])
+        
+        const handleDelete = async (id) => {
+            try {
+                await axios.delete('https://crud-tkvv.onrender.com/deleteuser/' + id)
+                window.location.reload()
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-
-    return (
+        
+        return (
         <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
             <div className='w-50 bg-white rounded p-3'>
                 <Link to={'/create'} className='btn btn-primary'>+Add</Link>
@@ -38,7 +38,7 @@ function Users() {
                             <th scope="col">Name</th>
                             <th scope="col">Age</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Actions</th>
+                        <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
